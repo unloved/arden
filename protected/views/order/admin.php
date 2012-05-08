@@ -43,14 +43,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'client_id',
-		'master_id',
-		'service_id',
-		'status_id',
-		'created_at',
-		/*
-		'ended_at',
-		*/
+		'client.name',
+		'master.name',
+		'service.name',
+		'status',
+                array(
+                    'name'=>'created_at',
+                    'value'=>' $data->created_at>0 ? date("d.m.Y", $data->created_at) : ""',
+                ),
+                array(
+                    'name'=>'ended_at',
+                    'value'=>' $data->ended_at>0 ? date("d.m.Y", $data->ended_at) : ""',
+                ),
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Добавить Заказ', 'url'=>array('create')),
-	array('label'=>'Управление Заказом', 'url'=>array('admin')),
+	array('label'=>'Управление Заказами', 'url'=>array('admin')),
 );
 ?>
 

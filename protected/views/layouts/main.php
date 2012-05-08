@@ -48,7 +48,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		&copy; <?php echo date('Y'); ?> ООО Шито-Крыто.<br/>
+		&copy; <?php echo date('Y'); ?> <?php echo CHtml::encode(Yii::app()->name); ?>.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 

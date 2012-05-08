@@ -19,14 +19,20 @@
  */
 class Order extends CActiveRecord
 {
-        public $statuses=array(''=>'', 0=>'Открыт');
+        public $statuses=array(''=>'', 0=>'Открыт',1=>'Закрыт');
         
         public function beforeSave()
         {
             if ($this->isNewRecord == true) {
                 $this->created_at = time();
-                $this->status_id = 1;
+                $this->status_id = 0;
             }
+            
+            if ($this->status_id == 1)
+            {
+                $this->ended_at = time();
+            }    
+            return true;
                 
         }
         
@@ -89,6 +95,7 @@ class Order extends CActiveRecord
 			'master_id' => 'Мастер',
 			'service_id' => 'Услуга',
 			'status_id' => 'Статус',
+                        'status' => 'Статус',
 			'created_at' => 'дата создания',
 			'ended_at' => 'дата закрытия',
 		);
@@ -110,6 +117,8 @@ class Order extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+                
+                $criteria->order='status_id asc, id asc';
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('client_id',$this->client_id);

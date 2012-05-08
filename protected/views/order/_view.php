@@ -21,11 +21,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>
-	<?php echo CHtml::encode($data->created_at); ?>
+	<?php echo CHtml::encode($data->created_at>0 ? date("d.m.Y", $data->created_at) : ""); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('ended_at')); ?>:</b>
-	<?php echo CHtml::encode($data->ended_at); ?>
+	<?php echo CHtml::encode($data->ended_at>0 ? date("d.m.Y", $data->ended_at) : ""); ?>
 	<br />
 
 

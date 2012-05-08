@@ -91,7 +91,7 @@ class OrderController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Order');
+		$dataProvider=new CActiveDataProvider('Order',array('criteria'=>array('order'=>'status_id asc, id asc')));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

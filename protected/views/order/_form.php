@@ -26,6 +26,12 @@
 		<?php echo $form->dropDownList($model,'service_id', CHtml::listData(Service::model()->findAll(),'id','name')); ?>
 		<?php echo $form->error($model,'service_id'); ?>
 	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'status_id'); ?>
+		<?php echo $form->dropDownList($model,'status_id', $model->statuses); ?>
+		<?php echo $form->error($model,'status_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить'); ?>

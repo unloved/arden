@@ -9,7 +9,7 @@ $this->menu=array(
 	array('label'=>'Добавить Заказ', 'url'=>array('create')),
 	array('label'=>'Редактирование Заказа', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Удалить Заказ', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Точно удалить?')),
-	array('label'=>'Управление Заказом', 'url'=>array('admin')),
+	array('label'=>'Управление Заказами', 'url'=>array('admin')),
 );
 ?>
 
@@ -19,11 +19,17 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'client_id',
-		'master_id',
-		'service_id',
-		'status_id',
-		'created_at',
-		'ended_at',
+		'client.name',
+		'master.name',
+		'service.name',
+		'status',
+		array(
+                    'name'=>'created_at',
+                    'value'=>($model->created_at>0 ? date("d.m.Y", $model->created_at) : ""),
+                ),
+                array(
+                    'name'=>'ended_at',
+                    'value'=>($model->ended_at>0 ? date("d.m.Y", $model->ended_at) : ""),
+                ),
 	),
 )); ?>

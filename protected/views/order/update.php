@@ -9,7 +9,7 @@ $this->menu=array(
 	array('label'=>'Список Заказов', 'url'=>array('index')),
 	array('label'=>'Добавить Заказ', 'url'=>array('create')),
 	array('label'=>'Просмотр Заказа', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Управление Заказом', 'url'=>array('admin')),
+	array('label'=>'Управление Заказами', 'url'=>array('admin')),
 );
 ?>
 
