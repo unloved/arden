@@ -28,7 +28,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Главная', 'url'=>array('/site/index')),
                                 array('label'=>'Услуги', 'url'=>array('/service/index')),
 				array('label'=>'Мастера', 'url'=>array('/master/index')),
 				array('label'=>'Клиенты', 'url'=>array('/client/index')),
