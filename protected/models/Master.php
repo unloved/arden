@@ -1,20 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "clients".
+ * This is the model class for table "masters".
  *
- * The followings are the available columns in table 'clients':
+ * The followings are the available columns in table 'masters':
  * @property integer $id
  * @property string $name
- * @property integer $address
- * @property integer $phone
+ * @property integer $type_id
+ *
+ * The followings are the available model relations:
+ * @property Orders[] $orders
  */
-class Client extends CActiveRecord
+class Master extends CActiveRecord
 {
+        public $types=array(''=>'', 0=>'Мастер-специалист высшего класса', 1=>'Мастер-специалист 1 класса', 2=>'Мастер-специалист 2 класса', 3=>'Мастер-специалист 3 класса');
+        
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Client the static model class
+	 * @return Master the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -26,7 +30,7 @@ class Client extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'clients';
+		return 'masters';
 	}
 
 	/**
@@ -37,12 +41,12 @@ class Client extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, address, phone', 'required'),
-			array('phone', 'numerical', 'integerOnly'=>true),
-			array('name, address', 'length', 'max'=>255),
+			array('name, type_id', 'required'),
+			array('type_id', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, address, phone', 'safe', 'on'=>'search'),
+			array('id, name, type_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +58,7 @@ class Client extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'orders' => array(self::HAS_MANY, 'Orders', 'master_id'),
 		);
 	}
 
@@ -65,10 +70,15 @@ class Client extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'ФИО',
-			'address' => 'Адрес',
-			'phone' => 'Телефон',
+			'type_id' => 'Тип',
+                        'type' => 'Тип',
 		);
-	}        
+	}
+        
+        public function GetType()
+        {
+            return $this->types[$this->type_id];
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -83,8 +93,6 @@ class Client extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('address',$this->address);
-		$criteria->compare('phone',$this->phone);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

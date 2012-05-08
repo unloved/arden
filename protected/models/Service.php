@@ -63,8 +63,8 @@ class Service extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'cost' => 'Cost',
+			'name' => 'Услуга',
+			'cost' => 'Цена',
 		);
 	}
 

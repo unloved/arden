@@ -1,18 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'Services'=>array('index'),
+	'Услуги'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	'Редактирование',
 );
 
 $this->menu=array(
-	array('label'=>'List Service', 'url'=>array('index')),
-	array('label'=>'Create Service', 'url'=>array('create')),
-	array('label'=>'View Service', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Service', 'url'=>array('admin')),
+	array('label'=>'Список Услуг', 'url'=>array('index')),
+	array('label'=>'Добавить Услугу', 'url'=>array('create')),
+	array('label'=>'Просмотр Услуги', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Управление Услугами', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Service <?php echo $model->id; ?></h1>
+<h1>Редактирование Услуги <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

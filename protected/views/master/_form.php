@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'service-form',
+	'id'=>'master-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -16,9 +16,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'cost'); ?>
-		<?php echo $form->textField($model,'cost'); ?>
-		<?php echo $form->error($model,'cost'); ?>
+		<?php echo $form->labelEx($model,'type_id'); ?>
+                <?php echo $form->dropDownList($model,'type_id', $model->types); ?>
+		<?php echo $form->error($model,'type_id'); ?>
 	</div>
 
 	<div class="row buttons">

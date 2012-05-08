@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Clients'=>array('index'),
-	'Create',
+	'Клиенты'=>array('index'),
+	'Добавление'
 );
 
 $this->menu=array(
-	array('label'=>'List Client', 'url'=>array('index')),
-	array('label'=>'Manage Client', 'url'=>array('admin')),
+	array('label'=>'Список Клиентов', 'url'=>array('index')),
+	array('label'=>'Управление Клиентами', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Client</h1>
+<h1>Добавление Клиента</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

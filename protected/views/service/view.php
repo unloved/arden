@@ -1,19 +1,19 @@
 <?php
 $this->breadcrumbs=array(
-	'Services'=>array('index'),
+	'Услуги'=>array('index'),
 	$model->name,
 );
 
 $this->menu=array(
-	array('label'=>'List Service', 'url'=>array('index')),
-	array('label'=>'Create Service', 'url'=>array('create')),
-	array('label'=>'Update Service', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Service', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Service', 'url'=>array('admin')),
+	array('label'=>'Список Услуг', 'url'=>array('index')),
+	array('label'=>'Добавить Услугу', 'url'=>array('create')),
+	array('label'=>'Редактирование Услуги', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Удалить Услугу', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Точно удалить?')),
+	array('label'=>'Управление Услугами', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Service #<?php echo $model->id; ?></h1>
+<h1>Просмотр Услуги #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

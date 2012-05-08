@@ -1,6 +1,6 @@
 <?php
 
-class ServiceController extends Controller
+class OrderController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -25,14 +25,14 @@ class ServiceController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Service;
+		$model=new Order;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Service']))
+		if(isset($_POST['Order']))
 		{
-			$model->attributes=$_POST['Service'];
+			$model->attributes=$_POST['Order'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -54,9 +54,9 @@ class ServiceController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Service']))
+		if(isset($_POST['Order']))
 		{
-			$model->attributes=$_POST['Service'];
+			$model->attributes=$_POST['Order'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,7 +91,7 @@ class ServiceController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Service');
+		$dataProvider=new CActiveDataProvider('Order');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -102,10 +102,10 @@ class ServiceController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Service('search');
+		$model=new Order('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Service']))
-			$model->attributes=$_GET['Service'];
+		if(isset($_GET['Order']))
+			$model->attributes=$_GET['Order'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -119,7 +119,7 @@ class ServiceController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Service::model()->findByPk($id);
+		$model=Order::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -131,7 +131,7 @@ class ServiceController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='service-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='order-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

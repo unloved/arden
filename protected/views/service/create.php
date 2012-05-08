@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Services'=>array('index'),
-	'Create',
+	'Услуги'=>array('index'),
+	'Добавление'
 );
 
 $this->menu=array(
-	array('label'=>'List Service', 'url'=>array('index')),
-	array('label'=>'Manage Service', 'url'=>array('admin')),
+	array('label'=>'Список Услуг', 'url'=>array('index')),
+	array('label'=>'Управление Услугами', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Service</h1>
+<h1>Добавление Услуги</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

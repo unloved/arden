@@ -1,13 +1,13 @@
 <?php
-$this->pageTitle=Yii::app()->name . ' - Login';
+$this->pageTitle=Yii::app()->name . ' - Вход';
 $this->breadcrumbs=array(
-	'Login',
+	'Вход',
 );
 ?>
 
-<h1>Login</h1>
+<h1>Вход</h1>
 
-<p>Please fill out the following form with your login credentials:</p>
+<p>Пожалуйста, заполните форму вашими данными:</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -18,7 +18,7 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Поля со знаком <span class="required">*</span> являются обязательными для заполнения.</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
