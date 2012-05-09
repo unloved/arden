@@ -26,8 +26,8 @@ $('.search-form form').submit(function(){
 <h1>Управление Заказами</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Вы можете использовать знаки (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+или <b>=</b>) в начале строки для уточнения параметров поиска
 </p>
 
 <?php echo CHtml::link('Продвинутый поиск','#',array('class'=>'search-button')); ?>
@@ -43,16 +43,24 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'client.name',
-		'master.name',
-		'service.name',
-		'status',
                 array(
-                    'name'=>'created_at',
+                    'header'=>'Клиент',
+                    'value'=>'$data->client->name'
+                ),
+                array(
+                    'header'=>'Мастер',
+                    'value'=>'$data->master->name'
+                ),
+		array(
+                    'header'=>'Статус',
+                    'value'=>'$data->status'
+                ),
+                array(
+                    'header'=>'дата создания',
                     'value'=>' $data->created_at>0 ? date("d.m.Y", $data->created_at) : ""',
                 ),
                 array(
-                    'name'=>'ended_at',
+                    'header'=>'дата закрытия',
                     'value'=>' $data->ended_at>0 ? date("d.m.Y", $data->ended_at) : ""',
                 ),
 		array(

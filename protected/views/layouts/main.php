@@ -33,6 +33,7 @@
 				array('label'=>'Мастера', 'url'=>array('/master/index')),
 				array('label'=>'Клиенты', 'url'=>array('/client/index')),
 				array('label'=>'Заказы', 'url'=>array('/order/index')),
+                                array('label'=>'Отчёты', 'url'=>array('/report/index')),
 				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>

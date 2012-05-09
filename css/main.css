@@ -227,3 +227,81 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+.report-loading {
+    background: url("loading.gif") no-repeat scroll 0 0 transparent;
+}
+.report {
+    padding: 15px 0;
+}
+.report table.items {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #D0E3EF;
+    border-collapse: collapse;
+    width: 100%;
+}
+.report table.items th, .report table.items td {
+    font-size: 0.9em;
+    padding: 0.3em;
+}
+.report table.items th {
+    background: url("bg.gif") repeat-x scroll left top white;
+    color: white;
+    text-align: center;
+}
+.report table.items th a {
+    color: #EEEEEE;
+    font-weight: bold;
+    text-decoration: none;
+}
+.report table.items th a:hover {
+    color: #FFFFFF;
+}
+.report table.items th a.asc {
+    background: url("up.gif") no-repeat scroll right center transparent;
+    padding-right: 10px;
+}
+.report table.items th a.desc {
+    background: url("down.gif") no-repeat scroll right center transparent;
+    padding-right: 10px;
+}
+.report table.items tr.even {
+    background: none repeat scroll 0 0 #F8F8F8;
+}
+.report table.items tr.odd {
+    background: none repeat scroll 0 0 #E5F1F4;
+}
+.report table.items tr.selected {
+    background: none repeat scroll 0 0 #BCE774;
+}
+.report table.items tr:hover {
+    background: none repeat scroll 0 0 #ECFBD4;
+}
+.report .link-column img {
+    border: 0 none;
+}
+.report .button-column {
+    text-align: center;
+    width: 60px;
+}
+.report .button-column img {
+    border: 0 none;
+}
+.report .checkbox-column {
+    width: 15px;
+}
+.report .summary {
+    margin: 0 0 5px;
+    text-align: right;
+}
+.report .pager {
+    margin: 5px 0 0;
+    text-align: right;
+}
+.report .empty {
+    font-style: italic;
+}
+.report .filters input, .report .filters select {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
